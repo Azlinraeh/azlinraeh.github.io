@@ -1,0 +1,301 @@
+/*
+ * Function to keep font size consistent
+ .selector { font-size: fs(x-small);}
+ * You can see the current values and variables in _var-fonts.scss
+ */
+/*
+* Function to use colors in our Scss
+.selector { color: color(color-white);}
+* You can see the current values and variables in _var-colors.scss
+*/
+@-webkit-keyframes candy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes candy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/**
+ * Constant layout values, apart from these we can also declare values
+ * for different blocks sizes and more.
+ */
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/*
+ * Brand colors
+ */
+/*
+* Grey Scale
+* This is mainly to hold back designers from adding 200 different greys ;)
+*/
+/*
+* Colors Map
+* We may also need a map with all these colors, to create classes.
+*/
+.ham {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 3rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  gap: 0.65rem;
+}
+
+.ham > span {
+  background: black;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.ham:hover span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.ham:hover span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham:hover span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cta {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+/*------------------------------------*\
+    $SITE
+\*------------------------------------*/
+html {
+  background: rgb(255, 255, 255);
+  font-size: 87.5%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  color: #4d4d4d;
+}
+
+.topbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgb(255, 255, 255);
+  margin: 0;
+  padding: 10px 30px;
+}
+
+.topbar img {
+  width: 150px;
+}
+
+.slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(143deg, #62C7E9, #62B171);
+  background-size: 200% 150%;
+  -webkit-animation: candy 20s ease infinite;
+          animation: candy 20s ease infinite;
+}
+
+.content-slide {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  padding: 24px 5%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.content-slide h1 {
+  font-size: clamp(6rem, 4vw + 0.8rem, 8rem);
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: -0.25em;
+          margin-block-end: -0.25em;
+  text-align: center;
+}
+
+.content-slide h3 {
+  font-size: clamp(2rem, 2vw + 0.8rem, 4rem);
+  font-weight: 100;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  text-align: center;
+}
+
+.is {
+  font-weight: 100;
+}
+
+.diego {
+  font-weight: 900;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.social a :visited {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.social svg {
+  padding: 12px;
+}
+
+.bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-bio {
+  width: 100%;
+  max-width: 51%;
+  margin: auto;
+  padding: 24px 5%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.content-bio h2 {
+  font-size: clamp(3rem, 2vw + 0.8rem, 5rem);
+  font-weight: 100;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  text-align: left;
+}
+
+.content-bio p {
+  font-size: clamp(1.5rem, 1vw + 0.8rem, 2rem);
+  font-weight: 300;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .content-bio {
+    max-width: 90%;
+  }
+}
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgb(255, 255, 255);
+  margin: 0;
+  padding: 10px 30px;
+  margin-top: auto;
+  font-weight: 100;
+}
+
+.footer img {
+  width: 26px;
+  padding: 0 14px;
+}
